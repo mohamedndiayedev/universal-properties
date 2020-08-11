@@ -101,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard/currency-converter">
+                    <a href="currency-converter">
                         <i class="ti-money"></i>
                         <p>Currency Converter</p>
                     </a>
