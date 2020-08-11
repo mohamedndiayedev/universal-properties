@@ -232,7 +232,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="dashboard/currency-converter">
+                                <a href="dashboard/currency-converter/index.html">
                                     <div class="footer">
                                     <hr />
                                     <div class="stats">
