@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Codou Diet Diary | Track your gains and loses with ease!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/style.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/animate.css">
+  </head>
+  <body onload = "loadUsers()">
+
+    <div class = "container hidden" id = "outer-container">
+      <div class = "modal fade" id = "editModal" role = "document">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Tracking diet</h4>
+
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" id = "editModalBody">
+              <div class = "hidden" id ="modalSaveText">
+              <p>Changes Saved!</p>
+            </div>
+              <form id = "editEntryForm">
+                <label for = "name">Nom complet</label>
+                <div class = "form-group">
+                <input class = "form-control" type = "Name" id = "nameEdit" placeholder = "nom complet *">
+                </div>
+                <div class = "form-group">
+                <label for = "weight">Poids</label>
+                <input class = "form-control" type = "number" id = "weightEdit" placeholder= "votre poids * !">
+                </div>
+                <div class = "form-group">
+                <label for = "date">Date</label>
+                <div class ="input-group">
+                <input class = "form-control" type = "date" id = "dateEdit">
+                <span class="input-group-btn">
+                  <button class="btn btn-default buttonMargin" type="button" id = "todayButtonEdit">Aujourd'hui</button>
+                </span>
+              </div>
+            </div>
+                <div class = "form-group">
+                <label for = "breakfastInput">Petit Déjeuner</label>
+                <textarea class = "form-control" rows = "4"  id = "breakfastInputEdit" placeholder="Qu'avez vous manger au petit déjeuner?"></textarea>
+                </div>
+                <div class = "form-group">
+                <label for = "lunchInput">Déjeuner</label>
+                <textarea class = "form-control" rows = "4" id = "lunchInputEdit" placeholder="Et au déjeuner?"></textarea>
+                </div>
+                <div class = "form-group">
+                <label for = "dinnerInput">Diner</label>
+                <textarea class = "form-control" rows = "4" id = "dinnerInputEdit" placeholder="Et au diner?"></textarea>
+                </div>
+                <div class = "form-group">
+                <label for = "exerciseInput">Exercise Routine</label>
+                <textarea class = "form-control" rows = "4" id = "exerciseInputEdit" placeholder="Enter votre routine journalier !"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" id = "saveChangesButton">Enregistrer</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="modal fade" id ="detailsModal" role="document">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Entry Details</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" id = "detailsModalBody">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class = "jumbotron">
+        <h1>Codou k Diet Track & Suivi graphique</h1>
+      <form id = "addEntryForm" class = "transparent" >
+        <div class = "form-group">
+        <label for = "name">Nom complet</label>
+        <input class = "form-control" type = "Name" id = "name" placeholder = "e. g Mohamed Ndiaye">
+        </div>
+        <div class = "form-group">
+        <label for = "weight">Votre Poids</label>
+        <input class = "form-control" type = "number" id = "weight" placeholder= "donnez votre poids *">
+        </div>
+        <div class = "form-group">
+        <label for = "date">Date</label>
+        <div class = "input-group">
+        <input class = "form-control" type = "date" id = "date">
+        <span class="input-group-btn">
+          <button class="btn btn-default buttonMargin" type="button" id = "todayButton">Aujourd'hui</button>
+        </span>
+      </div>
+    </div>
+        <div class = "form-group">
+        <label for = "breakfastInput">Petit Déjeuner</label>
+        <textarea class = "form-control" rows = "4"  id = "breakfastInput" placeholder="Qu'avez vous mager au p'tit déjeuner?"></textarea>
+        </div>
+        <div class = "form-group">
+        <label for = "lunchInput">Déjeuner</label>
+        <textarea class = "form-control" rows = "4" id = "lunchInput" placeholder="Qu'avez vous mager au déjeuner?"></textarea>
+        </div>
+        <div class = "form-group">
+        <label for = "dinnerInput">Diner</label>
+        <textarea class = "form-control" rows = "4" id = "dinnerInput" placeholder="Qu'avez vous mager au diner?"></textarea>
+        </div>
+        <div class = "form-group">
+        <label for = "exerciseInput">Exercise Routine</label>
+        <textarea class = "form-control" rows = "4" id = "exerciseInput" placeholder="Votre exercice pour le journée ?"></textarea>
+        </div>
+        <input type = "Button" class = "btn btn-primary" id = "addEntryButton" value = "Ajouter">
+      </form>
+      </div>
+      <div id = "allEntries">
+      </div>
+      <div>
+      <select id = "userDropDown">
+        <option value="" selected disabled hidden>Choisir Client</option>
+      </select>
+      <input type="button" value="Voir Clients" class = "btn btn-primary" id = "loadEntriesButton" />
+      <input type="button" value="Effacer Client" class = "btn btn-danger" id = "deleteUserButton" />
+      <table class = "table fadein" id = "entryTable">
+      </table>
+    <canvas id = "chart"></canvas>
+    </div>
+      <script src="../JS/wow.min.js"></script>
+      <script>
+      new WOW().init();
+      </script>
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+        <script src = "https://momentjs.com/downloads/moment.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://chancejs.com/chance.min.js"></script>
+        <script src = "../JS/functions.js"></script>
+  </body>
+</html>
