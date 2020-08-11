@@ -1,8 +1,8 @@
 <?php
-	$dbServer = 'mkorvuw3sl6cu9ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	';
+	$dbServer = 'mkorvuw3sl6cu9ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
 	$dbUsername = 'iigi5330azzahj3c';
 	$dbPassword = 'smij1gf9l7l65kwi';
-	$dbDatabase = '';
+	$dbDatabase = 'jj0m1ku5w7a37l39';
 
 	$adminConfig = array(
 		'adminUsername' => "admin",
