@@ -1,8 +1,8 @@
 <?php
-	$dbServer = 'localhost';
-	$dbUsername = 'root';
-	$dbPassword = '';
-	$dbDatabase = 'fantastic_school_admin_db';
+	$dbServer = 'mkorvuw3sl6cu9ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	';
+	$dbUsername = 'iigi5330azzahj3c';
+	$dbPassword = 'smij1gf9l7l65kwi';
+	$dbDatabase = '';
 
 	$adminConfig = array(
 		'adminUsername' => "admin",
