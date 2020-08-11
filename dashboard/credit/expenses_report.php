@@ -1,8 +1,8 @@
 <?php
 	require('vendor/fpdf/fpdf.php');
 
-	$connect = mysqli_connect('localhost','root','');
-	mysqli_select_db($connect,'skgambia');
+	$connect = mysqli_connect("mkorvuw3sl6cu9ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com","iigi5330azzahj3c","smij1gf9l7l65kwi");
+	mysqli_select_db($connect,'jj0m1ku5w7a37l39');
 
 
 	class PDF extends FPDF {
