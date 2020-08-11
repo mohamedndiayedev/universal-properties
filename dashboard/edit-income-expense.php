@@ -12,7 +12,7 @@ session_start();
 <div class="card-body">
 <?php
 
-$connection = mysqli_connect("localhost","root","","skgambia");
+$connection = mysqli_connect("mkorvuw3sl6cu9ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com","iigi5330azzahj3c","smij1gf9l7l65kwi","jj0m1ku5w7a37l39");
 if(isset($_POST['edit_btn'])) 
 {
    $id = $_POST['edit_id'];
