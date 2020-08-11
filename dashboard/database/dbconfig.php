@@ -1,5 +1,5 @@
 <?php 
-  $connection = mysqli_connect("localhost","root","","skgambia");
+  $connection = mysqli_connect("mkorvuw3sl6cu9ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com","iigi5330azzahj3c","smij1gf9l7l65kwi","jj0m1ku5w7a37l39");
 
   $query01 = "SELECT id FROM tbl_expense ORDER BY id";
   $query_run01= mysqli_query($connection, $query01);
